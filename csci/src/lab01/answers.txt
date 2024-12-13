@@ -1,0 +1,165 @@
+Name:     Christopher Asbrock
+Class:    csci205
+Section:  11am
+Lab:      lab01
+
+
+(1.1)   /home/chris/csci205_labs
+(1.2)   -a: (--all) do not ignore entries starting with .
+(1.3)   -l: uses a long list format
+(1.4)   ls  -t or ls -ls will sort the output by modification time (ls does it with details).
+        It sorts with the most recent files first.
+(1.5)   using -r will reverse the order: ls -tlr
+(1.6)   ls -S will sort by file size, largest first.
+        adding -l and -h makes easier to read (ls -Slh)
+
+(1.7)   csci205_labs:
+        total 4
+        drwxr-xr-x 3 chris chris 4096 Jan 14 16:35 src
+
+        csci205_labs/src:
+        total 4
+        drwxr-xr-x 2 chris chris 4096 Jan 14 16:39 lab01
+
+        csci205_labs/src/lab01:
+        total 4
+        -rw-r--r-- 1 chris chris 511 Jan 14 17:06 answers.txt
+
+
+(2.1)   Version control is a system of backing up older versions of different files.
+        its great for not only backing up, but referencing older work, debugging;
+        and with services such as git its great for syncing up data group members
+        since all commits can describe changes made and keep everyone on the same page.
+
+(2.2)   Local Version Control Systems
+          which is just moving files to other directories.
+          Simple and easy to do, can be problematic (especially since most of the time i do it
+          I am on the same drive so drive failure would lose everything), but its still good as
+          either a simple backup or an extra version backup (Have a removable hard drive that
+          I typically use as just another form of backup, can never have too many)
+        Centralized Version control
+          A version control that stores versioned files on a single server. The server can
+          be accessed by various clients determined by the administrator. Mentioned this when
+          I answered the 2.1, this is great for groups of people working on one project since it
+          allows access to various clients from one server (it is easy and make a mess of things though).
+          this is also good as it separates data from the client, so if anything goes wrong on the client
+          side, the server has the data (but that comes with a big risk if the server goes down).
+        Distributed Version Control Systems
+          Similar to Centralized Version control, a server that keeps all the information and
+          versions backed up. However, DVCS is clone of the clients repository. This protects clients
+          from server failure since the data on the server is just a mirror of the clients data, leaving the clients
+          data completely in tact. Its use is similar to Centralized Version control, allowing for version control,
+          usability, and group client support; but is more secure as a server failure will not lose the data.
+
+(2.3)   Git is a Distributed Version Control.
+
+(2.4)   Operations performed locally means that the entire history of your projects is on your local disk; since
+        git just clones the data for version control. One benefit to this is any type of latency or network problems
+        will not effect your ability to work. The other benefit, which is noteworthy, is that you do not need internet
+        to work on a project; the project can be easily worked on, then committed and pushed when you reacquire internet.
+
+(2.5)   Not sure if this question is asking literally how are they addressed with hash code (but that is covered in section 10
+        so I am assuming that is not the case.), or how repository are addressed with user info. But since it makes more sense
+        I'm going to go with the later. Git uses a username and email address to identify the user. When committed the info is always
+        included and used to identified who is committing. the identity can either be globally set, or manually or a specific project.
+
+        Or on second thought this question might be asking how files are addressed in the sense of individual snapshots being either saved
+        if modified or older work is referenced if unchanged. In the end the project references old and new files to fully represent each
+        version of the project when Committed. (I think I am overthinking this question)
+
+(2.6)   ("In my own words"?, what was I supposed to be doing before; copy/pasting?)
+        The three states that a file can be in answered
+        Modified, where the file is changed or is currently being working on but has not been staged: so the version control
+          is unaffected at the time.
+        Staged, where the file is marked as a new version and, I know from using git and intellij before, the new version can be
+          commented to actually note changes.
+        Committed, which means the data was actually pushed onto the server and is not stored there. at this point it is an
+          active version that can be pulled or referenced if needed.
+        (I'll note that I thought this was odd since if my memory is working I used to "commit" to stage the file, then "push" to store it
+        then again its 2am so maybe I am just thinking about it all wrong.)
+
+(2.7)   The "commit", represents a snapshot of all of the current files for reference. This is so git does not have to re-save any files
+        that are not modified. Instead if not changed git will just reference an old file if needed.
+
+(2.8)   A git branch spits commits into a new stream if snapshots. This new stream parallels the master branch and allows for current work not
+        to effect the master branch. This is good for testing, as you can leave a working master file unchanged, while you commit and work with
+        new versions on its own branch. If it works out it can be merged back with the main branch to commit the change, or worse case, scrapped
+        and was never a danger to the master branch. So I would say a git branches represent different paths that point the the master branch,
+        so they can be worked on and swapped between without effecting the master branch.
+
+
+(5.1)   bytecode is a machine language for the java virtual machine. Compiling a .java file successfully will create a .class file containing bytecode
+        which can then be run through the Java Virtual Machine
+
+(5.2)   The main benefit to developing a system to run on a virtual machine comes from the portability of the virtual machine. In Java's case
+        since The Java virtual machine is available across various operating systems a .class file is capable of running on any of them.
+
+(5.3)   One downside is the virtual machine is basically the middle man, and since its an extra step it is relatively slower.
+        (it also requires learning java which I hate with a passion)
+
+(5.4)   well I know java already, so I can vouch for its portability. Though I would not say it changed my life, many high level languages
+        are built for hand holding. Matter of fact I would say it changes things for the worse, I recognize the importance of understanding
+        the logic; including the underlying logic being glossed over with java. It handles so much behind the scenes I feel like its easy to get complacent
+        and lose touch with understanding the full scope of what your doing (such as garbage collection distancing you from even considering dynamically allocated memory).
+        I also question if the simplicity is just a front, since yeah syntax wise its simpler to just code compile and call it over, but there is so much going on behind
+        the scenes that I feel like as a learning tool it is just missing too much relevant information. I am lucky I know C so i have an idea of whats happening, i feel like
+        students who mess with java and python then jump into C programming are in for a rude awakening. It is safe to say I am not a java fan, I got into it at one point
+        but overall I feel like it is a mess.
+
+(5.5)   there is the single line comment "//", good for simple clarifications or notes
+        there is the multi line comment "/* comment */" that can span multiple lines, everything in between will be ignored
+        then there is the "/** */" for documentation, similar to the multi line comment but is also recognized by javadocs, which will use it to creates documents describing
+        a program and its functions as they are defined.
+
+(5.6)   run "$ javac MyProgram.java" to compile it, if it contains errors it will note it to be fixed, if not it will compile and create a .class file.
+        running "$ java MyProgram.class " will then run the program.
+
+
+(5.7)   It behaves by using print(String), to print the line then uses println() to terminate the line,
+        "Prints a String and then terminate the line. This method behaves as though it invokes print(String) and then println()."
+
+(5.8)   The "standard" input stream is in, and its type is InputStream.
+
+(5.9)   System.out.println(System.getProperty("os.name")); //getProperty actually returns a Property object, but it has a toString so it can just be printed out, So this should be good.
+
+(7.1)   jshell> long ns;
+        ns ==> 0
+
+(7.2)   jshell> long ms = ns / 1000000;
+        ms ==> 0
+
+        I am assuming the floating point portion of the output was rounded off because of how small it was.
+
+(7.3)   The result is 1 and not 1.5 because my two variable are of type int, so the answer is of type int and truncated the remainder.
+
+(7.4)   The new variable is a double, however the two variables being calculated are still int, so it is still truncating the remainder
+        when calculating the answer, then storing it in the double.
+
+(7.5)   Answer = 1.579 , the last line formatted the number to 3 decimal places.
+
+
+(8.1)   Prior to Java there was C++, another object oriented programming language. The primary ancestor to both languages is C.
+
+(8.2)   JVM is the Java Virtual Machine, it is more secure because it runs on its own environment which will prevent the program from
+        accessing other parts of the computer. This protects the private information in the computer because it can't be reached.
+
+(8.3)   Bytecode is a specific machine language designed to run with the JVM. When a .java file is successfully compiled it will create a .class file which is a set of instructions written in
+        bytecode. having a        bytecode. having a specific set of machine code solely for the the JVM allows java to be portable to any operating system with JVM installed. specific set of machine code solely for the the JVM allows java to be portable to any operating system with JVM installed.
+
+(8.4)   SE just stands for Standard Addition.
+
+(8.5)   JDK stands for Java Development Kit
+
+(8.6)   main() basically is the starting point, every program starts with a call to the main() function.
+
+(8.7)   The args variable in main is an array of strings that can be passed in. They can be passed in in the command line when the program is executed ($ javac myProgram.java "String1" "String2").
+
+(8.8)   void represents the return value which in the case of void, does not return anything.
+
+(8.9)   An identifier is the name of a variable, object, or method; they can be named virtually anything with but cannot start with a number and have some restricted symbols.
+
+(8.10)  Keywords are already defined words in java that can be used with java syntax to create programs. There are 61 keywords and server various purposes, class, defines a class, int can be used to create an integer, and something like public can define a method as unrestricted; to name a few.
+
+(8.11)  A literal is a value of various different types, int, double, char, string.
+
+(8.12)  a block of code is multiple lines of code grouped together. {} is used to define the scope of a code block, anything in between is considered in that code block.

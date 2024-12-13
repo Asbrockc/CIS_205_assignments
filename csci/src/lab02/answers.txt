@@ -1,0 +1,54 @@
+
+//this is a mess of things I'm remembering and I am terrible at descriptions so I will have to come back and actually look these answers up
+  so they make some sense.
+
+(1.1)   the primitives are 8 different base value types in java. All 8 are simple and have a max capacity.
+(1.2)   int, double, boolean, long, short, byte, float, char
+(1.3)   they all hold whole numbers, but have different amounts of memory allocated so some can hold larger ones then others.
+(1.4)   x ==> 300
+(1.5)   x = 300 (12C hex), the if memory serves %d is decimal format, %X is hexadecimal; they take the following two x parameters
+        and the code defines how they are printed.
+(1.6)   It gives an error since they are of different types.
+(1.7)   y ==> 44, (byte)x changes the type off x, but since a byte is small it only uses the available allocated space and caps out.
+(1.8)   I big fat error, because it needs numbers and x is now a character type.
+(1.9)   x = 110 (6E hex), that number is ascii value of the letter n, and the other is the hex code of that integer.
+(1.10)  both float and double can hold decimals, the difference is the amount of allocated space they have.
+(1.11)  == is the equals compare, it checks the two values are identical. x == y came back false because the values are not equal
+(1.12)  x == (int)y; truncates the remainder in y and changes the type to an int, so in this case they are the same value
+(1.13)  true, false
+(1.14)  no, char ch = "x", is attempting to assign a string to a character, when String is a class.
+(1.15)  no it is not, it is a Class; however a string literal is the characters held in-between the quotes. the class is a reference to the char sequence.
+(1.16)  the scope is in referrer to the space in between brackets {}, by that it means the scope of a variable is restricted to those brackets. since I am bad at explaining things
+        //scope examplle 1
+        {
+          {
+            int x = 0;
+          }
+
+          x = 20;// this will give me an error since the x is defined in that brackets scope
+        }
+
+        //scope example 2
+        {
+          int x = 0;
+
+          {
+            int y = 0;
+          }
+
+          x = 20;// this is fine because the x is defined in this scope and the y is defined in its own scope.
+        }
+
+        typically random bracket sets wouldn't be thrown around but its important for methods/if/else/loops/etc...
+
+(2.1)   Primitive:
+        Answer = 49999995000000. Time = 15802619 ns
+
+        Wrapped:
+        Answer = 49999995000000. Time = 183328817 ns
+        Primitive types used 8.6% of the time of wrapper objects.
+
+(2.2)   because primitives are basically data in its simplest terms, classes are references to data and are complicated
+        by comparison; since classes have constructors, methods, stored information, are handled differently by the compiler;
+        basically they are doing the same thing in more steps (but at least collections can recognize their existence...and I think
+        passing a primitive into a method is actually by value, not by reference; so that is relevant as well)

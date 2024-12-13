@@ -1,0 +1,125 @@
+/* *****************************************
+* CSCI205 - Software Engineering and Design
+* Spring 2020
+* Instructor: Christopher Dancy
+* Section: 11:00am - 11:52am
+*
+* Name: Christopher Asbrock
+* Date: 01/27/2020
+*
+* Lab / Assignment: Lab03
+*
+* Description: answers to tedious little questions that change a 10 minute lab into 3 hours of time I can't get back
+* *****************************************/
+
+(1.1) git commit -m "v1.1"
+(1.2) git checkout -b feature_1
+      git commit -m "feature 1 ready"
+(1.3) git checkout master
+      git checkout -b newGUI
+      git commit -m "gui work 1"
+      git commit -m "gui ready"
+(1.4) git checkout feature_1
+      git commit -m "improved"
+(1.5) git checkout -b test
+      git merge newGUI
+(1.6) git commit -m "complete"
+      git merge master
+      git checkout master
+      git merge test
+      git branch -d feature_1
+      git branch -d newGUI
+
+####################################  Q1  ####################################
+$ git log --oneline --decorate
+6594ef7 (HEAD -> master) more work
+f81f719 Init commit
+
+####################################  Q2  ####################################
+$ git log --oneline --decorate
+6594ef7 (HEAD -> myFeature, master) more work
+f81f719 Init commit
+
+####################################  Q3  ####################################
+$ git log --oneline --decorate
+d6677d8 (HEAD -> myFeature) test2
+ccb7919 test1
+6594ef7 (master) more work
+f81f719 Init commit
+
+####################################  Q4  ####################################
+$ git diff master
+diff --git a/Main.java b/Main.java
+index a45725b..101b58f 100644
+--- a/Main.java
++++ b/Main.java
+@@ -4,5 +4,13 @@ public class Main
+   {
+     //prints somthing out
+     System.out.println("Init commit);
++
++    char[] message = new char[]{'H','E','L','L','O',' ','W','O','R','L','D'};
++
++    // not going to complile just going to pretend like I remeber syntax
++    for (int i = 0; i < message.length; i++)
++    {
++      System.out.println(message[i]);
++    }
+   }
+ }
+
+####################################  Q5  ####################################
+$ git log --oneline --decorate --all
+d6677d8 (myFeature) test2
+ccb7919 test1
+6594ef7 (HEAD -> master) more work
+f81f719 Init commit
+
+####################################  Q6  ####################################
+$ git log --oneline --decorate --all
+d6677d8 (HEAD -> master, myFeature) test2
+ccb7919 test1
+6594ef7 more work
+f81f719 Init commit
+
+
+
+################################### (3.1) ###################################
+20
+Recursive fib: 6765
+Recursive Execution Time: 62.00 ms
+Non-recursive fib: 6765
+Non-Recursive Execution Time: 1.12 ms
+30
+Recursive fib: 832040
+Recursive Execution Time: 75.74 ms
+Non-recursive fib: 832040
+Non-Recursive Execution Time: 1.10 ms
+40
+Recursive fib: 102334155
+Recursive Execution Time: 1995.28 ms
+Non-recursive fib: 102334155
+Non-Recursive Execution Time: 1.19 ms
+
+Why do I think the recursive version is so much more computationally expensive? at some point I actually knew why...
+If i remember correctly it is because the loop is handling it case by case and just adding it to a total, the recursive
+method is actually building up a giant stack of data, then unwinding it all into the result once it reaches the break case.
+So the recursion is more computationally expensive because it is storing the info instead of just using it and moving on.
+
+
+################################### EXERCISE 4 ###################################
+
+(1.1) $3 ==> 8
+(1.2) $4 ==> 13
+(1.3) $5 ==> "Hello CSCI 205"
+(1.4) $6 ==> "llo"
+(1.5) $7 ==> true
+(1.6) $8 ==> '2'
+(1.7) $9 ==> 7
+(1.8) $10 ==> "HELLO"
+(1.9) No, already went over this before this String object are immutable, they do not change they create new String objects.
+(1.10)  $11 ==> "CSCI200"
+
+(1.11)  well (b) will make a brand new string object, case closed on that one (a) = is a little different, the String class has a pool of strings and if
+        the String already exists it will reference it instead of making a new object. (found it in oracle it's the intern() method that gets called... I think)
+        so (a) is more efficient, since if it is available it will not need to create a new object. (plus its easier to type, so it's efficient that way too)

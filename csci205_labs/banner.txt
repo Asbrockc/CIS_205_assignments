@@ -1,0 +1,14 @@
+/* *****************************************
+* CSCI205 - Software Engineering and Design
+* Spring 2020
+* Instructor: Christopher Dancy
+* Section: 11:00am - 11:52am
+*
+* Name: Christopher Asbrock
+* Date: 01/15/2020
+*
+* Lab / Assignment: Lab01
+*
+* Description: An introduction to version control to git, how to manage version control
+*   through the command line, and an introduction to Java syntax. 
+* *****************************************/

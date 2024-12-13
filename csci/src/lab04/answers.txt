@@ -1,0 +1,79 @@
+/* *****************************************
+* CSCI205 - Software Engineering and Design
+* Spring 2020
+* Instructor: Christopher Dancy
+* Section: 11:00am - 11:52am
+*
+* Name: Christopher Asbrock
+* Date: 01/31/2020
+*
+* Lab / Assignment: Lab01
+*
+* Description: lab04 answers.txt
+* *****************************************/
+
+##################################### (Q1) #####################################
+  (1.1)   $ git log --oneline --decorate
+          d6677d8 (HEAD -> master, myFeature) test2
+          ccb7919 test1
+          6594ef7 more work
+          f81f719 Init commit
+
+          $ git branch
+          * master
+            myFeature
+
+##################################### (Q2) #####################################
+(1.2)     $ git log --decorate --oneline --all
+          d6677d8 (myFeature) test2
+          ccb7919 test1
+          6594ef7 (HEAD -> master) more work
+          f81f719 Init commit
+
+##################################### (Q3) #####################################
+(1.3)     $ git log --decorate --oneline --graph --all
+          * ad6abfa (HEAD -> bugFix) Fixed bug
+          | * d6677d8 (myFeature) test2
+          | * ccb7919 test1
+          |/
+          * 6594ef7 (master) more work
+          * f81f719 Init commit
+
+##################################### (Q4) #####################################
+(1.4)     $ git log --graph --all --oneline --decorate
+          * ad6abfa (HEAD -> master, bugFix) Fixed bug
+          | * d6677d8 (myFeature) test2
+          | * ccb7919 test1
+          |/
+          * 6594ef7 more work
+          * f81f719 Init commit
+
+##################################### (Q5) #####################################
+          public static void main(String[] args)
+          {
+              //prints somthing out
+              System.out.println("Init commit);
+
+          <<<<<<< HEAD
+              System.out.println("Fixed bug");
+          =======
+              char[] message = new char[]{'H','E','L','L','O',' ','W','O','R','L','D'};
+
+              // not going to complile just going to pretend like I remeber syntax
+              for (int i = 0; i < message.length; i++)
+              {
+                  System.out.println(message[i]);
+              }
+          >>>>>>> myFeature
+          }
+
+##################################### (Q6) #####################################
+          $ git log --graph --all --oneline --decorate
+          *   2bec0e8 (HEAD -> master) Merge branch 'myFeature'
+          |\
+          | * d6677d8 (myFeature) test2
+          | * ccb7919 test1
+          * | ad6abfa Fixed bug
+          |/
+          * 6594ef7 more work
+          * f81f719 Init commit
